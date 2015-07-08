@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-7 19:33:37 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.lihui.hibernate.double_1_1.primary">
+    <class name="Manager" table="MANAGERS">
+        <id name="mgrId" type="java.lang.Integer">
+            <column name="MGR_ID" />
+            <generator class="native" />
+        </id>
+        <property name="mgrName" type="java.lang.String">
+            <column name="MGR_NAME" />
+        </property>
+        <one-to-one name="department" class="Department"></one-to-one>
+    </class>
+</hibernate-mapping>

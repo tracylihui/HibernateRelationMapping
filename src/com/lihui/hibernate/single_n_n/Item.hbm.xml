@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-8 9:20:08 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.lihui.hibernate.single_n_n">
+    <class name="Item" table="ITEMS">
+        <id name="itemId" type="java.lang.Integer">
+            <column name="ITEM_ID" />
+            <generator class="native" />
+        </id>
+        <property name="itemName" type="java.lang.String">
+            <column name="ITEM_NAME" />
+        </property>
+        <set name="categories" table="CATEGORIES_ITEMS" inverse="true">
+        	<key>
+        		<column name="I_ID"></column>
+        	</key>
+        	<many-to-many class="Category" column="C_ID"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

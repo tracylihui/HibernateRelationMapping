@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-7 19:33:37 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.lihui.hibernate.double_1_1.primary">
+    <class name="Department" table="DEPARTMENTS">
+        <id name="deptId" type="java.lang.Integer">
+            <column name="DEPT_ID" />
+            <generator class="foreign" >
+            	<param name="property">manager</param>
+            </generator>
+        </id>
+        <property name="deptName" type="java.lang.String">
+            <column name="DEPT_NAME" />
+        </property>
+        <one-to-one name="manager" class="Manager" constrained="true"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<!-- 配置数据库的基本信息 -->
+    	<property name="connection.username">root</property>
+    	<property name="connection.password">root</property>
+    	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    	<property name="connection.url">jdbc:mysql://localhost/hibernate5</property>
+    	
+    	<!-- 配置hibernate的基本信息 -->
+    	<!-- hibernate所使用的数据库方言 -->
+    	<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+    	
+    	<!-- 执行操作时，是否在控制台打印SQL -->
+    	<property name="show_sql">true</property>
+    	
+    	<!-- 是否对SQL进行格式化 -->
+    	<property name="format_sql">true</property>
+    	
+    	<!-- 指定自动生成数据表的策略 -->
+    	<property name="hbm2ddl.auto">create</property>
+    	<!-- sing_n_1 -->
+    	<!--  
+    	<mapping resource="com/lihui/hibernate/single_n_1/Order.hbm.xml"/>
+    	<mapping resource="com/lihui/hibernate/single_n_1/Customer.hbm.xml"/>
+    	-->
+    	<!-- double_n_1 -->
+    	<!--
+    	<mapping resource="com/lihui/hibernate/double_n_1/Order.hbm.xml"/>
+    	<mapping resource="com/lihui/hibernate/double_n_1/Customer.hbm.xml"/>
+    	-->
+    	<!-- double_1_1 foreign -->
+    	<!--
+    	<mapping resource="com/lihui/hibernate/double_1_1/foreign/Manager.hbm.xml"/>
+    	<mapping resource="com/lihui/hibernate/double_1_1/foreign/Department.hbm.xml"/>
+    	-->
+    	
+    	<!-- double_1_1 primary -->
+    	<!--
+    	<mapping resource="com/lihui/hibernate/double_1_1/primary/Manager.hbm.xml"/>
+    	<mapping resource="com/lihui/hibernate/double_1_1/primary/Department.hbm.xml"/>
+    	-->
+    	
+    	<!-- single_n_n -->
+    	<mapping resource="com/lihui/hibernate/single_n_n/Item.hbm.xml"/>
+    	<mapping resource="com/lihui/hibernate/single_n_n/Category.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
